@@ -1,0 +1,6 @@
+#!/bin/bash
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer <token>" \
+    -d '{"key1":null ,"key2": 1000, "key3": "value3"}' \
+    https://host.com/api/end/point

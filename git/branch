@@ -1,0 +1,14 @@
+#!/bin/bash
+# 현재 브랜치명 보기
+# 1.
+git branch --show-current
+# 2. https://stackoverflow.com/a/47095729
+git rev-parse --abbrev-ref HEAD
+
+# 특정 브랜치 클론
+git clone -b "branch/name_to_clone" --single-branch "${URL_OF_REPOSITORY}" /path/to/project/directory
+
+# 특정 브랜치 클론 후 다른 remote 브랜치 가져오기
+git fetch origin main
+# remote 가져온 후 checkout
+git checkout FETCH_HEAD -b main

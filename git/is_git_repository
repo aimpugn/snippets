@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 현재 디렉토리가 git 디렉토리면 true 반환
+# https://stackoverflow.com/a/16925062
+git rev-parse --is-inside-work-tree

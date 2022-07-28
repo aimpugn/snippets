@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# 현재 경로 가져오기
+CURRENT_DIR=$(cd "$(dirname "$0")" && pwd -P)

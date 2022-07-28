@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This works for any of the supported update procedures (--checkout, --rebase, etc.).
+# The only change is the source of the target SHA-1.
+# For example,
+# `submodule update --remote --merge` will merge upstream submodule changes into the submodules,
+# while `submodule update --merge` will merge superproject gitlink changes into the submodules.
+# 서브모듈 업데이트
+git submodule update --remote --merge
