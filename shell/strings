@@ -1,0 +1,4 @@
+#!/bin/bash
+# 특정 문자열에 해당하는 내용만 출력
+# van_transactions 만 추출된다. https://stackoverflow.com/a/11909057
+echo 'CREATE TABLE IF NOT EXISTS`van_transactions` (' | grep -Eo '\`\w+`' | sed 's/\`//g'

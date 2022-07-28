@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 특정 결과로 빈 파일 생성하기
+# https://stackoverflow.com/a/11909057 참고
+grep "CREATE TABLE" resources/sqls/meta/tables.sql | grep -Eo '\`\w+`' | sed 's/\`//g' | xargs -n 1 -I {} echo './resources/sqls/data/'{}'.sql' | xargs touch

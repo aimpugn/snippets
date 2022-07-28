@@ -1,0 +1,23 @@
+# mysql in github actions
+/usr/bin/docker create \
+    --name 085b8ed81ae246b88a0e98941c2a74e8_mysql5559_8bb4a7 \
+    --label 6f1554 \
+    --network github_network_ad434fcff3894859b5667212834694fc \
+    --network-alias mysql \
+    -p ${CUSTOM_PORT}:3306 \
+    --health-cmd="mysqladmin ping" \
+    --health-interval=10s  \
+    --health-timeout=5s \
+    --health-retries=3 \
+        -e "MYSQL_DATABASE=DBNAME" \
+        -e "MYSQL_HOST=127.0.0.1" \
+        -e "MYSQL_USER=${DB_USER}" \
+        -e "MYSQL_PASSWORD=${DB_PASSWORD}" \
+        -e "MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}" \
+        -e GITHUB_ACTIONS=true \
+        -e CI=true mysql:${VERSION}
+
+# 결과(container_id) 출력:1df07d1efe02be0c726c0c78b5009851853a17f06ef9be2073005e1394002a7b
+
+# 컨테이너 시작
+/usr/bin/docker start ${container_id}

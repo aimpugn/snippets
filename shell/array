@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# https://stackoverflow.com/a/10806809
+# local associative array
+f() {
+    declare -A map
+    map[x]=a
+    map[y]=b
+}
+
+# global associative array
+# bash 4.2 adds "declare -g" to create global variables from within a function.

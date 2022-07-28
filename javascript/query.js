@@ -3,6 +3,12 @@ function getQueryParams() {
     return Object.fromEntries(urlSearchParams.entries());
 }
 
+function getQueryParamsBy(query) {
+    const urlSearchParams = new URLSearchParams(query);
+    return Object.fromEntries(urlSearchParams.entries());
+}
+
+
 
 /**
  * https://stackoverflow.com/a/901144
